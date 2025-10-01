@@ -4,131 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kunal - Portfolio</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-    }
-    div .left {
-      align-items: flex-start;
-    display: flex;
-      }
-    body {
-      border: 5px solid #381b1b;
-     border-radius: 0%;
-      width: auto
-      margin: auto;
-    }
-
-    body {
-      background-color: rgba(5, 5, 48, 0.586);
-      color: white;
-      background-repeat: no-repeat;
-    }
-
-    nav {
-      display: flex;
-      justify-content: space-between;
-      padding: 5px;
-      margin: auto;
-      align-items: center;
-      height: 60px;
-      background-color: rgb(38, 38, 85);
-    }
-
-    nav ul {
-      display: flex;
-      justify-content: center;
-    }
-
-    nav ul li {
-      list-style: none;
-      margin: 0 23px;
-    }
-
-    nav ul li a {
-      text-decoration: none;
-      color: white;
-    }
-
-    nav ul li a:hover {
-
-      color: rgb(66, 66, 67);
-      font-size: 1.2rem;
-    }
-
-    .left {
-      font-size: 1.7rem;
-    }
-
-    .firstsection {
-      display: flex;
-      justify-content: space-around;
-      margin: 70px 0;
-    }
-
-    .firstsection>div {
-      width: 45%;
-    }
-
-    .leftsection {
-      font-size: 3rem;
-      margin: 20px 0;
-
-    }
-
-    .firstsection img {
-      width: 70%;
-
-    }
-
-    main hr {
-      border: 0;
-      background-color: rgb(22, 22, 55);
-      height: 2.2px;
-      margin: 60px 84px;
-    }
-
-    .purple {
-      color: bisque;
-    }
-
-    #element {
-      color: bisque;
-    }
-
-    .secondsection {
-      max-width: 80vw;
-      margin: auto;
-      height: 80vh;
-    }
-
-    .secondsection h1 {
-      font-size: 2rem;
-    }
-
-    .text-grey {
-      color: gray;
-    }
-
-    .secondsection .box{
-      background: white;
-      width: 80vw;
-      height: 2px;
-     margin: 56px 0;
-     display: flex;
-
-    }
-     .secondsection .vertical{
-      height: 93px;
-      width: 1px;
-      background: wheat;
-      margin: 0 150px;
-     }
-
-  
-  </style>
+  <title>Kunal Shah - Portfolio</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -137,50 +14,122 @@
       <div class="left">Kunal's Portfolio</div>
       <div class="right">
         <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/">About</a></a></li>
-          <li><a href="/">Services</a></li>
-          <li><a href="/">Projects</a></li>
-          <li><a href="/">Contact Me</a></li>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact Me</a></li>
         </ul>
       </div>
     </nav>
   </header>
+  
   <main>
-    <section class="firstsection">
+    <section id="home" class="firstsection">
       <div class="leftsection">
-        Hi, I'm <span class="purple">Kunal Shah</span>
-        <div>and I'm a passionate</div>
-        <span id="element"></span>
+        <h1>Hi, I'm <span class="purple">Kunal Shah</span></h1>
+        <p>and I'm a passionate</p>
+      
+        <div class="cta-buttons">
+          <a href="#contact" class="btn primary">Get In Touch</a>
+          <a href="#projects" class="btn secondary">View My Work</a>
+        </div>
       </div>
       <div class="rightsection">
-        <img src="Kunal.png" alt="">
+        <img src="Kunal.png" alt="Kunal Shah - Professional Photo">
       </div>
-
     </section>
+    
     <hr>
-    <section class="secondsection">
-      <span class="text-gray"> What I done so far</span>
-      <h1>Experience</h1>
-      <div class="box">
-        <div class="vertical"></div>
-        <div class="vertical"></div>
-        <div class="vertical"></div>
-        <div class="vertical"></div>
-        <div class="vertical"></div>
-
+    
+    <section id="about" class="secondsection">
+      <h2 class="section-title">About Me</h2>
+      <p class="about-text">
+        I'm a passionate web developer and graphic designer with a keen eye for creating 
+        beautiful, functional, and user-friendly digital experiences. I love turning ideas 
+        into reality through code and design.
+      </p>
+    </section>
+    
+    <hr>
+    
+    <section id="services" class="thirdsection">
+      <h2 class="section-title">What I Do</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>Web Development</h3>
+          <p>Creating responsive, modern websites using the latest technologies</p>
+        </div>
+        <div class="service-card">
+          <h3>Graphic Design</h3>
+          <p>Designing compelling visuals that communicate your message effectively</p>
+        </div>
+        <div class="service-card">
+          <h3>UI/UX Design</h3>
+          <p>Building intuitive user interfaces and seamless user experiences</p>
+        </div>
       </div>
-
+    </section>
+    
+    <hr>
+    
+    <section id="projects" class="fourthsection">
+      <h2 class="section-title">My Projects</h2>
+      <div class="projects-grid">
+    
+        <div class="project-card">
+          <a href="file:///Users/kunal/dev/Weather-App/index.html" target="_blank">
+            <img src="project 1 weather app.png" alt="Weather App Project">
+            <h3>Weather App Project</h3>
+            <p>HTML , CSS , JavaScript</p>
+          </a>
+          
+        </div>
+    
+        <div class="project-card">
+          <img src="images/project2.jpg" alt="Second Project">
+          <h3>Project 2</h3>
+          <p>Description of your second project</p>
+        </div>
+    
+        <div class="project-card">
+          <img src="images/project3.jpg" alt="Third Project">
+          <h3>Project 3</h3>
+          <p>Description of your third project</p>
+        </div>
+    
+      </div>
+    </section>
+    
+    <hr>
+    
+    <section id="contact" class="fifthsection">
+      <h2 class="section-title">Get In Touch</h2>
+      <div class="contact-content">
+        <p>I'm always interested in new opportunities and exciting projects.</p>
+        <div class="contact-info">
+          <p>Email: kunalshah1172@gmail.com</p>
+          <p>LinkedIn: linkedin.com/in/yourprofile</p>
+          <p>GitHub: github.com/kunalshahdev</p>
+        </div>
+      </div>
     </section>
   </main>
+  
+  <footer>
+    <p>&copy; 2025 Kunal Shah. All rights reserved.</p>
+  </footer>
+
   <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+  <script src="index.js"></script>
   <script>
     var typed = new Typed('#element', {
-      strings: ['Web Developer', 'Graphic Designer.'],
+      strings: ['Web Developer', 'Graphic Designer', 'UI/UX Designer', 'Creative Thinker'],
       typeSpeed: 50,
+      backSpeed: 30,
+      loop: true
     });
   </script>
 </body>
-
 
 </html>
