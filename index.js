@@ -1,6 +1,6 @@
-// Smooth scrolling for navigation links
+
 document.addEventListener('DOMContentLoaded', function() {
-    // Smooth scrolling for navigation links
+    
     const navLinks = document.querySelectorAll('nav a[href^="#"]');
     
     navLinks.forEach(link => {
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Add active class to navigation based on scroll position
+   
     const sections = document.querySelectorAll('section[id]');
     const navItems = document.querySelectorAll('nav a[href^="#"]');
     
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     window.addEventListener('scroll', updateActiveNav);
     
-    // Add scroll reveal animation
+    
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, observerOptions);
     
-    // Observe all sections for animation
+   
     sections.forEach(section => {
         section.style.opacity = '0';
         section.style.transform = 'translateY(30px)';
@@ -69,14 +69,14 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(section);
     });
     
-    // Typing animation enhancement
+   
     const typedElement = document.getElementById('element');
     if (typedElement) {
-        // Add a subtle glow effect to the typing text
+      
         typedElement.style.textShadow = '0 0 10px rgba(100, 255, 218, 0.5)';
     }
     
-    // Add hover effects to service and project cards
+    
     const cards = document.querySelectorAll('.service-card, .project-card');
     cards.forEach(card => {
         card.addEventListener('mouseenter', function() {
@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Add scroll-to-top functionality
+   
     const scrollTopBtn = document.createElement('button');
     scrollTopBtn.innerHTML = '↑';
     scrollTopBtn.className = 'scroll-top-btn';
@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     document.body.appendChild(scrollTopBtn);
     
-    // Show/hide scroll-to-top button
+   
     window.addEventListener('scroll', function() {
         if (window.scrollY > 300) {
             scrollTopBtn.style.opacity = '1';
@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Scroll to top functionality
+    
     scrollTopBtn.addEventListener('click', function() {
         window.scrollTo({
             top: 0,
@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Add hover effect to scroll-to-top button
+    
     scrollTopBtn.addEventListener('mouseenter', function() {
         this.style.transform = 'scale(1.1)';
         this.style.boxShadow = '0 6px 20px rgba(100, 255, 218, 0.4)';
@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', function() {
         this.style.boxShadow = '0 4px 12px rgba(100, 255, 218, 0.3)';
     });
     
-    // Add loading animation
+    
     window.addEventListener('load', function() {
         document.body.style.opacity = '0';
         document.body.style.transition = 'opacity 0.5s ease';
@@ -152,9 +152,56 @@ document.addEventListener('DOMContentLoaded', function() {
             document.body.style.opacity = '1';
         }, 100);
     });
+
+    
+    const openModalBtn = document.getElementById('openContactModal');
+    const contactModal = document.getElementById('contactModal');
+    const closeTriggers = document.querySelectorAll('[data-close]');
+    const contactForm = document.getElementById('contactForm');
+
+    if (openModalBtn && contactModal) {
+        openModalBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            contactModal.classList.add('open');
+            contactModal.setAttribute('aria-hidden', 'false');
+        });
+    }
+
+    closeTriggers.forEach(el => {
+        el.addEventListener('click', function() {
+            contactModal.classList.remove('open');
+            contactModal.setAttribute('aria-hidden', 'true');
+        });
+    });
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && contactModal && contactModal.classList.contains('open')) {
+            contactModal.classList.remove('open');
+            contactModal.setAttribute('aria-hidden', 'true');
+        }
+    });
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('contactName').value.trim();
+            const email = document.getElementById('contactEmail').value.trim();
+            const subject = document.getElementById('contactSubject').value.trim();
+            const message = document.getElementById('contactMessage').value.trim();
+
+            const to = 'kunalshah1172@gmail.com';
+            const body = `Name: ${name}%0D%0AEmail: ${encodeURIComponent(email)}%0D%0A%0D%0A${encodeURIComponent(message)}`;
+            const mailtoLink = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${body}`;
+
+            window.location.href = mailtoLink;
+
+            contactModal.classList.remove('open');
+            contactModal.setAttribute('aria-hidden', 'true');
+        });
+    }
 });
 
-// Add some CSS for the active navigation state
+
 const style = document.createElement('style');
 style.textContent = `
     nav a.active {

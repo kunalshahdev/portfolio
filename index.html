@@ -29,10 +29,12 @@
       <div class="leftsection">
         <h1>Hi, I'm <span class="purple">Kunal Shah</span></h1>
         <p>and I'm a passionate</p>
+        <span id="element"></span>
       
         <div class="cta-buttons">
-          <a href="#contact" class="btn primary">Get In Touch</a>
+          <a href="#contact" id="openContactModal" class="btn primary">Get In Touch</a>
           <a href="#projects" class="btn secondary">View My Work</a>
+          <a href="Kunal_Shah_CV.pdf" class="btn secondary" download>Download CV</a>
         </div>
       </div>
       <div class="rightsection">
@@ -78,18 +80,18 @@
       <div class="projects-grid">
     
         <div class="project-card">
-          <a href="file:///Users/kunal/dev/Weather-App/index.html" target="_blank">
-            <img src="project 1 weather app.png" alt="Weather App Project">
+          <a href="https://github.com/kunalshahdev/Weather-app-" target="_blank" rel="noopener noreferrer">
+            <img src="project 1 weather app.png" alt="Weather App Project"></a>
             <h3>Weather App Project</h3>
             <p>HTML , CSS , JavaScript</p>
-          </a>
+          
           
         </div>
     
         <div class="project-card">
-          <img src="images/project2.jpg" alt="Second Project">
-          <h3>Project 2</h3>
-          <p>Description of your second project</p>
+          <img src="project 2 portfolio.png" alt="Second Project">
+          <h3>Personal Portfolio</h3>
+          <p>HTML , CSS , JavaScript</p>
         </div>
     
         <div class="project-card">
@@ -120,13 +122,44 @@
     <p>&copy; 2025 Kunal Shah. All rights reserved.</p>
   </footer>
 
+  <!-- Contact Modal -->
+  <div id="contactModal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="contactTitle">
+    <div class="modal-overlay" data-close></div>
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Close" data-close>&times;</button>
+      <h3 id="contactTitle">Get In Touch</h3>
+      <form id="contactForm">
+        <div class="form-row">
+          <label for="contactName">Name</label>
+          <input type="text" id="contactName" name="name" placeholder="Your name" required>
+        </div>
+        <div class="form-row">
+          <label for="contactEmail">Email</label>
+          <input type="email" id="contactEmail" name="email" placeholder="you@example.com" required>
+        </div>
+        <div class="form-row">
+          <label for="contactSubject">Subject</label>
+          <input type="text" id="contactSubject" name="subject" placeholder="Subject" required>
+        </div>
+        <div class="form-row">
+          <label for="contactMessage">Message</label>
+          <textarea id="contactMessage" name="message" rows="5" placeholder="Your message..." required></textarea>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn primary">Send</button>
+          <button type="button" class="btn secondary" data-close>Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
   <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
   <script src="index.js"></script>
   <script>
     var typed = new Typed('#element', {
       strings: ['Web Developer', 'Graphic Designer', 'UI/UX Designer', 'Creative Thinker'],
       typeSpeed: 50,
-      backSpeed: 30,
+      backSpeed: 40,
       loop: true
     });
   </script>
