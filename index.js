@@ -297,22 +297,6 @@ function setYear() {
   if (el) el.textContent = new Date().getFullYear();
 }
 
-function initThemeToggle() {
-  const btn = document.querySelector('.theme-toggle');
-  if (!btn) return;
-
-  const stored = localStorage.getItem('theme');
-  const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
-  const isLight = stored ? stored === 'light' : prefersLight;
-
-  if (isLight) document.documentElement.classList.add('light-theme');
-
-  btn.addEventListener('click', () => {
-    const now = document.documentElement.classList.toggle('light-theme');
-    localStorage.setItem('theme', now ? 'light' : 'dark');
-  });
-}
-
 function initScrollToTop() {
   const btn = document.getElementById('scrollToTop');
   if (!btn) return;
@@ -342,5 +326,4 @@ document.addEventListener('DOMContentLoaded', () => {
   initHamburger();
   setYear();
   initScrollToTop();
-  initThemeToggle();
 });
