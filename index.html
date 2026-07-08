@@ -3,11 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kunal Shah — Web Developer & Graphic Designer</title>
-  <meta name="description" content="Portfolio of Kunal Shah — a web developer and graphic designer from Kathmandu, Nepal.">
-  <meta name="keywords" content="Kunal Shah, web developer, graphic designer, UI/UX designer, portfolio">
-  <meta property="og:title" content="Kunal Shah — Web Developer & Graphic Designer">
-  <meta property="og:description" content="Portfolio of Kunal Shah — web developer and graphic designer from Nepal.">
+  <title>Kunal Shah &middot; Web Developer & Graphic Designer</title>
+  <meta name="description" content="Portfolio of Kunal Shah, a web developer and graphic designer from Kathmandu, Nepal.">
+  <meta property="og:title" content="Kunal Shah, Web Developer & Graphic Designer">
+  <meta property="og:description" content="Portfolio of Kunal Shah, web developer and graphic designer from Nepal.">
   <meta property="og:url" content="https://kunalshahdev.github.io/portfolio">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
@@ -20,6 +19,21 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Kunal Shah",
+    "jobTitle": "Web Developer & Graphic Designer",
+    "url": "https://kunalshahdev.github.io/portfolio",
+    "sameAs": [
+      "https://github.com/kunalshahdev",
+      "https://www.linkedin.com/in/kunal-raj-shah-670183382/"
+    ]
+  }
+  </script>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
 </head>
 <body>
 
@@ -31,7 +45,7 @@
     <nav>
       <div class="logo"><img src="images/nepal-flag.svg" alt="Nepal" class="flag-icon">Kunal<span class="accent">.</span></div>
       <ul class="nav-links">
-        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#home" aria-current="page">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#services">Services</a></li>
@@ -51,7 +65,7 @@
         <span class="hero-badge">Available for freelance</span>
         <h1>Hi, I'm <span class="gradient-text">Kunal Shah</span></h1>
         <p class="hero-subtitle">I craft <span id="element"></span></p>
-        <p class="hero-description">I build websites and graphics that actually work — clean, functional, and made with care.</p>
+        <p class="hero-description">I build websites and graphics that actually work. Clean, functional, made with care.</p>
         <div class="hero-actions">
           <a href="#contact" id="openContactModal" class="btn primary">Get In Touch</a>
           <a href="#projects" class="btn secondary">View Projects</a>
@@ -72,7 +86,7 @@
       </div>
       <div class="about-grid">
         <div class="about-text">
-          <p>I'm a web developer and graphic designer from Kathmandu, Nepal, passionate about building digital experiences that are both functional and visually compelling. I work across the full stack — from frontend interfaces to backend logic — and enjoy taking ideas from concept to launch. Outside of coding, I spend my time designing in Figma and continuously learning new tools to sharpen my craft. I'm currently diving into React and Next.js to build more dynamic and performant web applications.</p>
+          <p>I'm a web developer and graphic designer from Kathmandu, Nepal. I like building things for the web, frontend or backend, whatever it takes to make something that works and looks good. I've been at it for about three years and I'm still learning something new with every project. These days I'm getting into React and enjoying how it changes the way I build interfaces. When I'm not coding I'm probably designing in Figma or trying out some new tool I found.</p>
         </div>
         <div class="about-stats">
           <div class="stat-card">
@@ -121,28 +135,22 @@
           <span class="skill-icon">🎯</span>
           <h3>UI/UX</h3>
         </div>
-        <div class="skill-card learning">
-          <span class="skill-icon">⚛️</span>
-          <h3>React</h3>
-          <span class="learning-badge">In Progress</span>
-        </div>
-        <div class="skill-card learning">
-          <span class="skill-icon">▲</span>
-          <h3>Next.js</h3>
-          <span class="learning-badge">In Progress</span>
-        </div>
+
       </div>
     </section>
 
+    <div id="react-root"></div>
+
     <section id="activity" class="activity">
       <div class="section-header">
-        <span class="section-number">03</span>
+        <span class="section-number">04</span>
         <h2 class="section-title">GitHub Activity</h2>
       </div>
       <div class="activity-content">
-        <p>My contribution graph from the past year — building stuff, fixing bugs, and learning in public.</p>
+        <p>My contribution graph from the past year. Building stuff, fixing bugs, learning in public.</p>
         <div class="calendar">
-          <img src="https://ghchart.rshah.org/00e5ff/kunalshahdev" alt="GitHub contribution chart" loading="lazy" />
+          <img src="https://ghchart.rshah.org/00e5ff/kunalshahdev" alt="GitHub contribution chart" loading="lazy" onerror="this.parentElement.classList.add('error')" />
+          <p class="chart-fallback">Chart could not load. <a href="https://github.com/kunalshahdev" target="_blank" rel="noopener noreferrer">View on GitHub</a></p>
         </div>
         <a href="https://github.com/kunalshahdev" target="_blank" rel="noopener noreferrer" class="btn ghost">View GitHub Profile &rarr;</a>
       </div>
@@ -150,147 +158,165 @@
 
     <section id="services" class="services">
       <div class="section-header">
-        <span class="section-number">04</span>
+        <span class="section-number">05</span>
         <h2 class="section-title">Services</h2>
       </div>
       <div class="services-grid">
         <div class="service-card">
           <div class="card-icon">&lt;/&gt;</div>
           <h3>Web Development</h3>
-          <p>Custom websites and web applications built to load fast, work reliably, and look great on any device.</p>
+          <p>Custom websites and web apps that load fast, work reliably, and look good on any device.</p>
         </div>
         <div class="service-card">
           <div class="card-icon">✦</div>
           <h3>Graphic Design</h3>
-          <p>Logos, brand identity, social media graphics — clean visuals that help your brand stand out.</p>
+          <p>Logos, brand identity, social media graphics. Clean visuals that help your brand stand out.</p>
         </div>
         <div class="service-card">
           <div class="card-icon">◈</div>
           <h3>UI/UX Design</h3>
-          <p>Simple, intuitive interfaces designed for real people. Focused on usability, clarity, and a seamless experience.</p>
+          <p>Simple, intuitive interfaces designed for real people. Focused on usability, clarity, and making things easy to use.</p>
         </div>
       </div>
     </section>
 
     <section id="projects" class="projects">
       <div class="section-header">
-        <span class="section-number">05</span>
+        <span class="section-number">06</span>
         <h2 class="section-title">Projects</h2>
       </div>
       <div class="projects-grid">
-        <a href="https://weather-app-blush-nine.vercel.app" target="_blank" rel="noopener noreferrer" class="project-card">
-          <div class="project-image">
-            <img src="images/weather-app.png" alt="Weather App Project" loading="lazy">
-            <div class="project-overlay">
-              <span>View Project &rarr;</span>
+        <div class="project-card">
+          <a href="https://weather-app-blush-nine.vercel.app" target="_blank" rel="noopener noreferrer" class="project-image-link">
+            <div class="project-image">
+              <img src="images/weather-app.png" alt="Weather App Project" loading="lazy">
+              <div class="project-overlay">
+                <span>View Live &rarr;</span>
+              </div>
             </div>
-          </div>
+          </a>
           <div class="project-info">
             <h3>Weather App</h3>
-            <p>HTML, CSS, JavaScript</p>
+            <p>Fetches live weather from a public API. Clean interface that changes with the conditions.</p>
             <div class="project-tech">
               <span>HTML</span>
               <span>CSS</span>
               <span>JS</span>
+              <span>API</span>
+              <a href="https://github.com/kunalshahdev/weather-app" target="_blank" rel="noopener noreferrer" class="project-code-link">Code &rarr;</a>
             </div>
           </div>
-        </a>
-        <a href="https://github.com/kunalshahdev/portfolio" target="_blank" rel="noopener noreferrer" class="project-card">
-          <div class="project-image">
-            <img src="images/portfolio.png" alt="Personal Portfolio" loading="lazy">
-            <div class="project-overlay">
-              <span>View Project &rarr;</span>
+        </div>
+        <div class="project-card">
+          <a href="https://kunalshahdev.github.io/portfolio" target="_blank" rel="noopener noreferrer" class="project-image-link">
+            <div class="project-image">
+              <img src="images/portfolio.png" alt="Personal Portfolio" loading="lazy">
+              <div class="project-overlay">
+                <span>View Live &rarr;</span>
+              </div>
             </div>
-          </div>
+          </a>
           <div class="project-info">
             <h3>Personal Portfolio</h3>
-            <p>HTML, CSS, JavaScript</p>
+            <p>Dark theme portfolio with particle effects, scroll animations, and a contact form. The one you're looking at right now.</p>
             <div class="project-tech">
               <span>HTML</span>
               <span>CSS</span>
               <span>JS</span>
+              <a href="https://github.com/kunalshahdev/portfolio" target="_blank" rel="noopener noreferrer" class="project-code-link">Code &rarr;</a>
             </div>
           </div>
-        </a>
-        <a href="https://github.com/kunalshahdev/hotel-management-system" target="_blank" rel="noopener noreferrer" class="project-card">
-          <div class="project-image">
-            <img src="images/hotel-management-system.png" alt="Hotel Management System" loading="lazy">
-            <div class="project-overlay">
-              <span>View Project &rarr;</span>
+        </div>
+        <div class="project-card">
+          <a href="https://github.com/kunalshahdev/hotel-management-system" target="_blank" rel="noopener noreferrer" class="project-image-link">
+            <div class="project-image">
+              <img src="images/hotel-management-system.png" alt="Hotel Management System" loading="lazy">
+              <div class="project-overlay">
+                <span>View Code &rarr;</span>
+              </div>
             </div>
-          </div>
+          </a>
           <div class="project-info">
             <h3>Hotel Management System</h3>
-            <p>PHP, MySQL, JavaScript</p>
+            <p>A full-stack booking system. PHP backend with a MySQL database for managing rooms and reservations.</p>
             <div class="project-tech">
               <span>PHP</span>
               <span>MySQL</span>
               <span>JS</span>
             </div>
           </div>
-        </a>
-        <a href="https://task-manager-ten-ashen.vercel.app" target="_blank" rel="noopener noreferrer" class="project-card">
-          <div class="project-image">
-            <img src="images/task-manager.png" alt="Task Manager" loading="lazy">
-            <div class="project-overlay">
-              <span>View Project &rarr;</span>
+        </div>
+        <div class="project-card">
+          <a href="https://task-manager-ten-ashen.vercel.app" target="_blank" rel="noopener noreferrer" class="project-image-link">
+            <div class="project-image">
+              <img src="images/task-manager.png" alt="Task Manager" loading="lazy">
+              <div class="project-overlay">
+                <span>View Live &rarr;</span>
+              </div>
             </div>
-          </div>
+          </a>
           <div class="project-info">
             <h3>Task Manager</h3>
-            <p>HTML, CSS, JavaScript</p>
+            <p>Add tasks, mark them done, stay organized. Everything saves to localStorage so you don't lose your list.</p>
             <div class="project-tech">
               <span>HTML</span>
               <span>CSS</span>
               <span>JS</span>
+              <a href="https://github.com/kunalshahdev/task-manager" target="_blank" rel="noopener noreferrer" class="project-code-link">Code &rarr;</a>
             </div>
           </div>
-        </a>
-        <a href="https://expense-tracker-one-rho-46.vercel.app" target="_blank" rel="noopener noreferrer" class="project-card">
-          <div class="project-image">
-            <img src="images/expense-tracker.png" alt="Expense Tracker" loading="lazy">
-            <div class="project-overlay">
-              <span>View Project &rarr;</span>
+        </div>
+        <div class="project-card">
+          <a href="https://expense-tracker-one-rho-46.vercel.app" target="_blank" rel="noopener noreferrer" class="project-image-link">
+            <div class="project-image">
+              <img src="images/expense-tracker.png" alt="Expense Tracker" loading="lazy">
+              <div class="project-overlay">
+                <span>View Live &rarr;</span>
+              </div>
             </div>
-          </div>
+          </a>
           <div class="project-info">
             <h3>Expense Tracker</h3>
-            <p>HTML, CSS, JavaScript</p>
+            <p>Track what you earn and spend. Category breakdowns and charts to see where your money goes.</p>
             <div class="project-tech">
               <span>HTML</span>
               <span>CSS</span>
               <span>JS</span>
+              <a href="https://github.com/kunalshahdev/expense-tracker" target="_blank" rel="noopener noreferrer" class="project-code-link">Code &rarr;</a>
             </div>
           </div>
-        </a>
-        <a href="https://recipe-finder-ashy.vercel.app" target="_blank" rel="noopener noreferrer" class="project-card">
-          <div class="project-image">
-            <img src="images/recipe-finder.png" alt="Recipe Finder" loading="lazy">
-            <div class="project-overlay">
-              <span>View Project &rarr;</span>
+        </div>
+        <div class="project-card">
+          <a href="https://recipe-finder-ashy.vercel.app" target="_blank" rel="noopener noreferrer" class="project-image-link">
+            <div class="project-image">
+              <img src="images/recipe-finder.png" alt="Recipe Finder" loading="lazy">
+              <div class="project-overlay">
+                <span>View Live &rarr;</span>
+              </div>
             </div>
-          </div>
+          </a>
           <div class="project-info">
             <h3>Recipe Finder</h3>
-            <p>HTML, CSS, JavaScript, API</p>
+            <p>Search thousands of recipes by what's in your kitchen. Uses the Spoonacular API. Filter by diet, cuisine, or ingredient.</p>
             <div class="project-tech">
               <span>HTML</span>
               <span>CSS</span>
               <span>JS</span>
               <span>API</span>
+              <a href="https://github.com/kunalshahdev/recipe-finder" target="_blank" rel="noopener noreferrer" class="project-code-link">Code &rarr;</a>
             </div>
           </div>
-        </a>
+        </div>
       </div>
     </section>
 
     <section id="contact" class="contact">
       <div class="section-header">
-        <span class="section-number">06</span>
+        <span class="section-number">07</span>
         <h2 class="section-title">Get In Touch</h2>
       </div>
       <div class="contact-content">
-        <p>Have a project in mind or just want to say hi? I'd love to hear from you.</p>
+        <p>Got a project in mind or just want to say hi? I'd love to hear from you.</p>
         <div class="contact-links">
           <a href="mailto:kunalshah1172@gmail.com" class="contact-item">
             <span class="contact-item-icon">
@@ -360,7 +386,78 @@
     </div>
   </div>
 
-  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js" integrity="sha384-cMrTlShXEGSdSFA359p+3aVUxK/R+0TAfbRZMcTlAn8yqzxEDj05QsS65nTFMMj4" crossorigin="anonymous"></script>
   <script src="index.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    const { useState } = React;
+
+    function TechExplorer() {
+      const [active, setActive] = useState(null);
+
+      const techs = [
+        {
+          name: 'React',
+          desc: 'Building interactive UIs with reusable components and hooks. This section is built with it.',
+          icon: React.createElement('svg', { viewBox: '0 0 24 24', width: 24, height: 24, fill: 'none', stroke: 'currentColor', strokeWidth: 1.8, strokeLinecap: 'round', strokeLinejoin: 'round' },
+            React.createElement('circle', { cx: 12, cy: 12, r: 2 }),
+            React.createElement('path', { d: 'M12 2a10 10 0 0 1 10 10 10 10 0 0 1-10 10' }),
+            React.createElement('path', { d: 'M12 2a10 10 0 0 0-10 10 10 10 0 0 0 10 10' }),
+            React.createElement('path', { d: 'M4.93 4.93a10 10 0 0 1 14.14 0' }),
+            React.createElement('path', { d: 'M4.93 19.07a10 10 0 0 1 14.14 0' })
+          )
+        },
+        {
+          name: 'Next.js',
+          desc: 'A full-stack React framework with routing, SSR, and the newer App Router approach.',
+          icon: React.createElement('svg', { viewBox: '0 0 24 24', width: 24, height: 24, fill: 'none', stroke: 'currentColor', strokeWidth: 1.8, strokeLinecap: 'round', strokeLinejoin: 'round' },
+            React.createElement('path', { d: 'M3 3h18v18H3z' }),
+            React.createElement('path', { d: 'M3 3l18 18' }),
+            React.createElement('path', { d: 'M3 21L21 3' })
+          )
+        },
+        {
+          name: 'TypeScript',
+          desc: 'Type-safe JavaScript. Helps catch bugs early and makes code easier to work with on bigger projects.',
+          icon: React.createElement('svg', { viewBox: '0 0 24 24', width: 24, height: 24, fill: 'none', stroke: 'currentColor', strokeWidth: 1.8, strokeLinecap: 'round', strokeLinejoin: 'round' },
+            React.createElement('rect', { x: 2, y: 2, width: 20, height: 20, rx: 2 }),
+            React.createElement('path', { d: 'M9 12h6' }),
+            React.createElement('path', { d: 'M12 9v6' })
+          )
+        },
+        {
+          name: 'Tailwind',
+          desc: 'A utility-first CSS framework. Makes it faster to build responsive layouts without writing custom styles.',
+          icon: React.createElement('svg', { viewBox: '0 0 24 24', width: 24, height: 24, fill: 'none', stroke: 'currentColor', strokeWidth: 1.8, strokeLinecap: 'round', strokeLinejoin: 'round' },
+            React.createElement('path', { d: 'M12 2L2 7l10 5 10-5-10-5z' }),
+            React.createElement('path', { d: 'M2 17l10 5 10-5' }),
+            React.createElement('path', { d: 'M2 12l10 5 10-5' })
+          )
+        },
+      ];
+
+      return (
+        <section className="exploring">
+          <div className="section-header">
+            <span className="section-number">03</span>
+            <h2 className="section-title">Currently Exploring</h2>
+          </div>
+          <p className="exploring-intro">Technologies I'm learning and playing with right now.</p>
+          <div className="exploring-grid">
+            {techs.map((t, i) => (
+              <button key={t.name} className={'explore-card' + (active === i ? ' active' : '')} onClick={() => setActive(active === i ? null : i)}>
+                <div className="explore-icon">{t.icon}</div>
+                <h3>{t.name}</h3>
+                {active === i && <p className="explore-desc">{t.desc}</p>}
+              </button>
+            ))}
+          </div>
+        </section>
+      );
+    }
+
+    const root = ReactDOM.createRoot(document.getElementById('react-root'));
+    root.render(React.createElement(TechExplorer));
+  </script>
 </body>
 </html>

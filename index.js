@@ -1,6 +1,7 @@
 class ParticleNetwork {
   constructor() {
     this.canvas = document.getElementById('particleCanvas');
+    if (!this.canvas) return;
     this.ctx = this.canvas.getContext('2d');
     this.particles = [];
     this.mouse = { x: null, y: null, radius: 120 };
@@ -102,14 +103,9 @@ function initScrollProgress() {
   });
 }
 
-function initSmoothScroll() {
-  document.querySelectorAll('nav a[href^="#"]').forEach(link => {
-    link.addEventListener('click', e => {
-      e.preventDefault();
-      const target = document.querySelector(link.getAttribute('href'));
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
+function initMobileMenuClose() {
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
       const navUl = document.querySelector('.nav-links');
       const hamburger = document.querySelector('.hamburger');
       if (navUl && navUl.classList.contains('open')) {
@@ -138,9 +134,9 @@ function initActiveNav() {
     });
 
     navLinks.forEach(link => {
-      link.classList.remove('active');
+      link.removeAttribute('aria-current');
       if (link.getAttribute('href') === `#${current}`) {
-        link.classList.add('active');
+        link.setAttribute('aria-current', 'page');
       }
     });
   }
@@ -173,7 +169,7 @@ function initTyped() {
   el.style.textShadow = '0 0 20px rgba(0, 229, 255, 0.3)';
 
   new Typed('#element', {
-    strings: ['Websites & Web Apps', 'Clean & Modern Interfaces', 'Full-Stack Solutions', 'Pixel-Perfect Designs'],
+    strings: ['Websites and Web Apps', 'Clean Interfaces', 'Full Stack Solutions', 'Pixel Perfect Designs'],
     typeSpeed: 50,
     backSpeed: 30,
     backDelay: 1500,
@@ -223,6 +219,7 @@ function initModal() {
     if (!modal) return;
     modal.classList.add('open');
     modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
     focusFirst(modalContent);
   }
 
@@ -230,6 +227,7 @@ function initModal() {
     if (!modal) return;
     modal.classList.remove('open');
     modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
     if (openBtn) openBtn.focus();
   }
 
@@ -265,10 +263,30 @@ function initModal() {
   });
 
   if (form) {
-    form.addEventListener('submit', e => {
+    form.addEventListener('submit', async e => {
+      e.preventDefault();
       const submitBtn = form.querySelector('.btn.primary');
+      const origText = submitBtn.textContent;
       submitBtn.textContent = 'Sending...';
       submitBtn.disabled = true;
+
+      try {
+        const data = new FormData(form);
+        const res = await fetch('https://formsubmit.co/ajax/kunalshah1172@gmail.com', {
+          method: 'POST',
+          body: JSON.stringify(Object.fromEntries(data)),
+          headers: { 'Content-Type': 'application/json' },
+        });
+        if (!res.ok) throw new Error();
+        form.innerHTML = '<div class="form-success"><div class="form-success-icon">&#10003;</div><p>Thanks! I will get back to you soon.</p></div>';
+      } catch {
+        submitBtn.textContent = origText;
+        submitBtn.disabled = false;
+        const err = document.createElement('p');
+        err.className = 'form-error';
+        err.innerHTML = 'Something went wrong. Email me at <a href="mailto:kunalshah1172@gmail.com">kunalshah1172@gmail.com</a>';
+        form.querySelector('.form-actions').before(err);
+      }
     });
   }
 }
@@ -310,8 +328,8 @@ function initScrollToTop() {
 document.addEventListener('DOMContentLoaded', () => {
   new ParticleNetwork();
   initScrollProgress();
-  initSmoothScroll();
   initActiveNav();
+  initMobileMenuClose();
   initScrollReveal();
   initTyped();
   initCounters();
