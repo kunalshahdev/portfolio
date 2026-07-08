@@ -912,7 +912,7 @@ footer {
     left: 0;
     right: 0;
     flex-direction: column;
-    background: rgba(10, 10, 26, 0.95);
+    background: var(--bg-primary);
     backdrop-filter: blur(20px);
     border: 1px solid var(--border);
     border-radius: var(--radius);

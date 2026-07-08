@@ -173,7 +173,7 @@ function initTyped() {
   el.style.textShadow = '0 0 20px rgba(0, 229, 255, 0.3)';
 
   new Typed('#element', {
-    strings: ['Websites & Apps', 'PHP & MySQL Backends', 'Clean UI', 'Creative Solutions'],
+    strings: ['Websites & Web Apps', 'Clean & Modern Interfaces', 'Full-Stack Solutions', 'Pixel-Perfect Designs'],
     typeSpeed: 50,
     backSpeed: 30,
     backDelay: 1500,
