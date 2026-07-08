@@ -2,12 +2,26 @@
   "name": "portfolio",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
-    "build": "mkdir -p dist && ./node_modules/.bin/minify index.html > dist/index.html && ./node_modules/.bin/minify style.css > dist/style.css && ./node_modules/.bin/minify index.js > dist/index.js",
-    "deploy": "npm run build && npx gh-pages -d dist"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint .",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7"
   },
   "devDependencies": {
-    "gh-pages": "^6.0.0",
-    "minify": "^11.0.0"
+    "@vitejs/plugin-react": "^6.0.3",
+    "eslint": "^9.39.4",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "globals": "^17.7.0",
+    "prettier": "^3.9.4",
+    "vite": "^8.1.3"
   }
 }

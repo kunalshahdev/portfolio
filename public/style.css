@@ -7,7 +7,6 @@
   --border-hover: rgba(255, 255, 255, 0.16);
   --cyan: #00e5ff;
   --purple: #a855f7;
-  --accent: #f59e0b;
   --text-primary: #e2e8f0;
   --text-secondary: #94a3b8;
   --text-muted: #64748b;
@@ -26,7 +25,9 @@
   --z-modal: 2000;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -163,12 +164,13 @@ nav {
   font-size: 0.9rem;
   font-weight: 500;
   color: var(--text-secondary);
-  transition: color var(--transition), background var(--transition);
+  transition:
+    color var(--transition),
+    background var(--transition);
 }
 
 .nav-links a:hover,
-.nav-links a.active,
-.nav-links a[aria-current="page"] {
+.nav-links a[aria-current='page'] {
   color: var(--text-primary);
   background: var(--surface);
 }
@@ -189,7 +191,9 @@ nav {
   height: 2px;
   background: var(--text-primary);
   border-radius: 2px;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
 }
 
 .hamburger.active span:nth-child(1) {
@@ -319,7 +323,9 @@ nav {
 }
 
 @keyframes spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .btn {
@@ -330,7 +336,12 @@ nav {
   border-radius: 100px;
   font-size: 0.9rem;
   font-weight: 600;
-  transition: transform var(--transition), box-shadow var(--transition), background var(--transition), border-color var(--transition), color var(--transition);
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition),
+    background var(--transition),
+    border-color var(--transition),
+    color var(--transition);
   border: none;
   cursor: pointer;
 }
@@ -391,7 +402,10 @@ nav {
   border-radius: var(--radius);
   padding: 28px 20px;
   text-align: center;
-  transition: background var(--transition), border-color var(--transition), transform var(--transition);
+  transition:
+    background var(--transition),
+    border-color var(--transition),
+    transform var(--transition);
 }
 
 .stat-card:hover {
@@ -429,7 +443,10 @@ nav {
   border-radius: var(--radius);
   padding: 24px 20px;
   text-align: center;
-  transition: background var(--transition), border-color var(--transition), transform var(--transition);
+  transition:
+    background var(--transition),
+    border-color var(--transition),
+    transform var(--transition);
 }
 
 .skill-card:hover {
@@ -450,24 +467,6 @@ nav {
   font-weight: 600;
 }
 
-.skill-card.learning {
-  border-color: var(--accent);
-  position: relative;
-}
-
-.learning-badge {
-  display: inline-block;
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  color: #0a0a1a;
-  background: var(--accent);
-  padding: 2px 8px;
-  border-radius: 20px;
-  margin-top: 8px;
-  text-transform: uppercase;
-}
-
 .services-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -479,7 +478,10 @@ nav {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 36px 28px;
-  transition: background var(--transition), border-color var(--transition), transform var(--transition);
+  transition:
+    background var(--transition),
+    border-color var(--transition),
+    transform var(--transition);
   position: relative;
   overflow: hidden;
 }
@@ -582,7 +584,10 @@ nav {
   padding: 24px;
   text-align: left;
   cursor: pointer;
-  transition: background var(--transition), border-color var(--transition), transform var(--transition);
+  transition:
+    background var(--transition),
+    border-color var(--transition),
+    transform var(--transition);
   color: var(--text-primary);
   font-family: inherit;
   width: 100%;
@@ -642,7 +647,10 @@ nav {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   overflow: hidden;
-  transition: background var(--transition), border-color var(--transition), transform var(--transition);
+  transition:
+    background var(--transition),
+    border-color var(--transition),
+    transform var(--transition);
 }
 
 .project-card:hover {
@@ -736,7 +744,9 @@ nav {
   border-color: rgba(168, 85, 247, 0.2);
   color: var(--purple);
   text-decoration: none;
-  transition: background var(--transition), border-color var(--transition);
+  transition:
+    background var(--transition),
+    border-color var(--transition);
 }
 
 .project-code-link:hover {
@@ -768,7 +778,10 @@ nav {
   border-radius: var(--radius);
   background: var(--surface);
   border: 1px solid var(--border);
-  transition: background var(--transition), border-color var(--transition), transform var(--transition);
+  transition:
+    background var(--transition),
+    border-color var(--transition),
+    transform var(--transition);
 }
 
 .contact-item:hover {
@@ -879,7 +892,9 @@ footer {
   padding: 12px 16px;
   font-family: var(--font-body);
   font-size: 0.95rem;
-  transition: border-color var(--transition), box-shadow var(--transition);
+  transition:
+    border-color var(--transition),
+    box-shadow var(--transition);
 }
 
 .form-row input:focus,
@@ -912,7 +927,9 @@ footer {
   opacity: 0;
   visibility: hidden;
   transform: translateY(10px);
-  transition: transform var(--transition), box-shadow var(--transition);
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition);
   box-shadow: 0 4px 15px rgba(0, 229, 255, 0.3);
 }
 
@@ -1069,7 +1086,9 @@ footer {
     scroll-behavior: auto;
   }
 
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
