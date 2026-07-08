@@ -133,8 +133,8 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 28px;
-  height: 56px;
+  padding: 0 32px;
+  height: 60px;
   background: rgba(10, 10, 26, 0.65);
   backdrop-filter: blur(20px) saturate(1.4);
   -webkit-backdrop-filter: blur(20px) saturate(1.4);
@@ -148,6 +148,15 @@ nav {
   font-size: 1.35rem;
   font-weight: 700;
   letter-spacing: -0.5px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.flag-icon {
+  height: 28px;
+  width: auto;
+  display: block;
 }
 
 .logo .accent {
@@ -426,6 +435,42 @@ nav {
 .stat-label {
   font-size: 0.85rem;
   color: var(--text-muted);
+}
+
+/* ============================================
+   Skills
+   ============================================ */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.skill-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px 20px;
+  text-align: center;
+  transition: all var(--transition);
+}
+
+.skill-card:hover {
+  background: var(--surface-hover);
+  border-color: var(--border-hover);
+  transform: translateY(-4px);
+}
+
+.skill-icon {
+  font-size: 1.8rem;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.skill-card h3 {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
 }
 
 /* ============================================
@@ -750,6 +795,40 @@ footer {
 }
 
 /* ============================================
+   Scroll to Top
+   ============================================ */
+.scroll-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--cyan), #0ea5e9);
+  color: var(--bg-primary);
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all var(--transition);
+  box-shadow: 0 4px 15px rgba(0, 229, 255, 0.3);
+}
+
+.scroll-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.scroll-top:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 229, 255, 0.4);
+}
+
+/* ============================================
    Animations
    ============================================ */
 @keyframes fadeInUp {
@@ -806,6 +885,7 @@ footer {
     grid-template-columns: 1fr;
   }
 
+  .skills-grid,
   .services-grid,
   .projects-grid {
     grid-template-columns: 1fr;

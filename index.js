@@ -174,7 +174,7 @@ function initScrollReveal() {
     });
   }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
 
-  document.querySelectorAll('section, .service-card, .project-card, .stat-card, .contact-item').forEach(el => {
+  document.querySelectorAll('section, .service-card, .project-card, .stat-card, .skill-card, .contact-item').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(24px)';
     el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
@@ -191,7 +191,7 @@ function initTyped() {
   el.style.textShadow = '0 0 20px rgba(0, 229, 255, 0.3)';
 
   new Typed('#element', {
-    strings: ['Web Experiences', 'Visual Identities', 'Digital Products', 'Creative Solutions'],
+    strings: ['Websites & Apps', 'PHP & MySQL Backends', 'Clean UIs', 'Creative Solutions'],
     typeSpeed: 50,
     backSpeed: 30,
     backDelay: 1500,
@@ -328,6 +328,26 @@ function setYear() {
 }
 
 /* ============================================
+   Scroll to Top
+   ============================================ */
+function initScrollToTop() {
+  const btn = document.getElementById('scrollToTop');
+  if (!btn) return;
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      btn.classList.add('visible');
+    } else {
+      btn.classList.remove('visible');
+    }
+  }, { passive: true });
+
+  btn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
+/* ============================================
    Init
    ============================================ */
 document.addEventListener('DOMContentLoaded', () => {
@@ -341,4 +361,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initModal();
   initHamburger();
   setYear();
+  initScrollToTop();
 });

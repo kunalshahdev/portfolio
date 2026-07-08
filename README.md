@@ -1,81 +1,70 @@
 # Kunal Shah - Portfolio Website
 
-A modern, responsive portfolio website showcasing web development and graphic design skills.
+A modern, responsive portfolio website showcasing web development and design skills.
 
 ## Features
 
-### Modern Design
-- Clean, professional aesthetic with a dark theme
-- Smooth gradients and modern color scheme
-- Responsive design that works on all devices
-- Beautiful hover effects and animations
+### Design
+- Clean dark theme with cyan/purple accent colors
+- Responsive on all devices
+- Glassmorphism navigation bar
+- Particle network background with mouse interaction
+- Profile glow animation
 
 ### Interactive Elements
-- Smooth scrolling navigation
-- Typing animation for skills
-- Scroll-triggered animations
-- Active navigation highlighting
+- Typing animation (Typed.js)
+- Scroll-triggered fade-in animations
+- Animated stat counters
+- Active nav highlighting on scroll
+- Scroll progress bar
+- Contact modal with focus trapping
 - Scroll-to-top button
-- Contact modal with form
 - Mobile hamburger menu
 
 ### Sections
-1. **Hero Section** - Introduction with typing animation
-2. **About** - Personal description and background
-3. **Services** - Skills and offerings
-4. **Projects** - Portfolio showcase
-5. **Contact** - Get in touch information
+1. **Hero** - Introduction with typing animation
+2. **About** - Bio with stats counters
+3. **Skills** - Tech stack cards
+4. **Services** - Offerings (Web Dev, Graphic Design, UI/UX)
+5. **Projects** - Work showcase
+6. **Contact** - Contact links and message form
 
-## Technologies Used
+## Colors
+
+| Role | Color |
+|------|-------|
+| Background | `#0a0a1a` |
+| Accent (cyan) | `#00e5ff` |
+| Accent (purple) | `#a855f7` |
+| Text primary | `#e2e8f0` |
+| Text secondary | `#94a3b8` |
+
+## Tech Stack
 
 - **HTML5** - Semantic markup
-- **CSS3** - Modern styling with Flexbox and Grid
-- **JavaScript** - Interactive features and animations
-- **Typed.js** - Typing animation library
-- **CSS Animations** - Smooth transitions and effects
+- **CSS3** - Flexbox, Grid, custom properties
+- **JavaScript** - Vanilla JS (no frameworks)
+- **Typed.js** - Typing animation
 
 ## Getting Started
 
-1. Clone or download the repository
-2. Serve the directory with any static server (e.g. `npx serve .` or open `index.html`)
-3. Customize the content to match your information
-4. Update images and personal details
+1. Clone or download the repo
+2. Open `index.html` in a browser (or use `npx serve .`)
+3. Edit content in `index.html` to match your info
+4. Replace images in `/images/` folder
 
 ## Customization
 
-### Colors
-The main color scheme uses:
-- Primary: `#64ffda` (Cyan/Teal)
-- Background: `#0f0f23` to `#1a1a3a` (Dark Blue Gradient)
-- Text: `#ffffff` (White) and `#8892b0` (Light Gray)
-
-### Content
-- Update personal information in the HTML
-- Replace `images/Kunal.png` with your own photo
-- Modify the typing animation strings
-- Add your actual projects and services
-- Update contact information
-
-### Styling
-- Modify `style.css` for color and layout changes
-- Adjust animations in `index.js`
-- Customize responsive breakpoints
+- **Personal info** — edit `index.html` text
+- **Projects** — add/remove `.project-card` blocks in `index.html`
+- **Skills** — add/remove `.skill-card` blocks
+- **Colors** — change CSS variables in `:root` in `style.css`
+- **Typing strings** — edit the array in `index.js`
+- **Profile photo** — replace `images/Kunal.png`
+- **CV** — replace `images/Kunal_Shah_CV.pdf`
 
 ## Browser Support
 
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
+- Chrome, Firefox, Safari, Edge (latest versions)
 - Mobile browsers
-
-## License
-
-This project is open source and available under the [MIT License](LICENSE).
-
----
-
-**Built with by Kunal Shah**
-# Updated-Portfolio
-# Updated-Portfolio
-# Updated-Portfolio
+- `prefers-reduced-motion` supported

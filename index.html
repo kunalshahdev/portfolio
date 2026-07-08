@@ -25,10 +25,11 @@
 
   <header>
     <nav>
-      <div class="logo">Kunal<span class="accent">.</span></div>
+      <div class="logo"><img src="images/nepal-flag.svg" alt="Nepal" class="flag-icon">Kunal<span class="accent">.</span></div>
       <ul class="nav-links">
         <li><a href="#home" class="active">Home</a></li>
         <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#projects">Work</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -54,7 +55,7 @@
       </div>
       <div class="hero-visual">
         <div class="profile-glow">
-          <img src="images/Kunal.png" alt="Kunal Shah" loading="lazy">
+          <img src="images/Kunal.png" alt="Kunal Shah">
         </div>
       </div>
     </section>
@@ -66,7 +67,7 @@
       </div>
       <div class="about-grid">
         <div class="about-text">
-          <p>I'm a passionate web developer and graphic designer with a keen eye for creating beautiful, functional, and user-friendly digital experiences. I love turning ideas into reality through code and design.</p>
+          <p>I'm a web developer and graphic designer based in Kathmandu, Nepal. I love turning ideas into reality through code and design, building everything from clean frontends to full-stack apps.</p>
         </div>
         <div class="about-stats">
           <div class="stat-card">
@@ -85,9 +86,42 @@
       </div>
     </section>
 
-    <section id="services" class="services">
+    <section id="skills" class="skills">
       <div class="section-header">
         <span class="section-number">02</span>
+        <h2 class="section-title">Skills</h2>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <span class="skill-icon">🌐</span>
+          <h3>HTML</h3>
+        </div>
+        <div class="skill-card">
+          <span class="skill-icon">🎨</span>
+          <h3>CSS</h3>
+        </div>
+        <div class="skill-card">
+          <span class="skill-icon">⚡</span>
+          <h3>JavaScript</h3>
+        </div>
+        <div class="skill-card">
+          <span class="skill-icon">🐘</span>
+          <h3>PHP</h3>
+        </div>
+        <div class="skill-card">
+          <span class="skill-icon">🗄️</span>
+          <h3>MySQL</h3>
+        </div>
+        <div class="skill-card">
+          <span class="skill-icon">🎯</span>
+          <h3>UI/UX</h3>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="services">
+      <div class="section-header">
+        <span class="section-number">03</span>
         <h2 class="section-title">Services</h2>
       </div>
       <div class="services-grid">
@@ -111,13 +145,13 @@
 
     <section id="projects" class="projects">
       <div class="section-header">
-        <span class="section-number">03</span>
+        <span class="section-number">04</span>
         <h2 class="section-title">Selected Work</h2>
       </div>
       <div class="projects-grid">
         <a href="https://kunalshahdev.github.io/Weather-app-/" target="_blank" rel="noopener noreferrer" class="project-card">
           <div class="project-image">
-            <img src="images/project 1 weather app.png" alt="Weather App Project" loading="lazy">
+            <img src="images/weather-app.png" alt="Weather App Project" loading="lazy">
             <div class="project-overlay">
               <span>View Project &rarr;</span>
             </div>
@@ -132,9 +166,9 @@
             </div>
           </div>
         </a>
-        <a class="project-card">
+        <a href="https://kunalshahdev.github.io/portfolio/" target="_blank" rel="noopener noreferrer" class="project-card">
           <div class="project-image">
-            <img src="images/project 2 portfolio.png" alt="Personal Portfolio" loading="lazy">
+            <img src="images/portfolio.png" alt="Personal Portfolio" loading="lazy">
             <div class="project-overlay">
               <span>View Project &rarr;</span>
             </div>
@@ -149,12 +183,29 @@
             </div>
           </div>
         </a>
+        <a href="https://github.com/kunalshahdev/hotel-management-system" target="_blank" rel="noopener noreferrer" class="project-card">
+          <div class="project-image">
+            <img src="images/weather-app.png" alt="Hotel Management System" loading="lazy">
+            <div class="project-overlay">
+              <span>View Project &rarr;</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>Hotel Management System</h3>
+            <p>PHP, MySQL, JavaScript</p>
+            <div class="project-tech">
+              <span>PHP</span>
+              <span>MySQL</span>
+              <span>JS</span>
+            </div>
+          </div>
+        </a>
       </div>
     </section>
 
     <section id="contact" class="contact">
       <div class="section-header">
-        <span class="section-number">04</span>
+        <span class="section-number">05</span>
         <h2 class="section-title">Get In Touch</h2>
       </div>
       <div class="contact-content">
@@ -180,6 +231,8 @@
       </div>
     </section>
   </main>
+
+  <button id="scrollToTop" class="scroll-top" aria-label="Scroll to top">&uarr;</button>
 
   <footer>
     <p>&copy; <span id="year"></span> Kunal Shah. Built with &Delta;.</p>
