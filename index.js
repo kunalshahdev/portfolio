@@ -1,6 +1,3 @@
-/* ============================================
-   Particle Network Background
-   ============================================ */
 class ParticleNetwork {
   constructor() {
     this.canvas = document.getElementById('particleCanvas');
@@ -95,9 +92,6 @@ class ParticleNetwork {
   }
 }
 
-/* ============================================
-   Scroll Progress
-   ============================================ */
 function initScrollProgress() {
   const bar = document.querySelector('.scroll-progress');
   window.addEventListener('scroll', () => {
@@ -108,9 +102,6 @@ function initScrollProgress() {
   });
 }
 
-/* ============================================
-   Smooth Scroll Nav
-   ============================================ */
 function initSmoothScroll() {
   document.querySelectorAll('nav a[href^="#"]').forEach(link => {
     link.addEventListener('click', e => {
@@ -130,9 +121,6 @@ function initSmoothScroll() {
   });
 }
 
-/* ============================================
-   Active Nav Highlighting
-   ============================================ */
 function initActiveNav() {
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-links a');
@@ -161,9 +149,6 @@ function initActiveNav() {
   update();
 }
 
-/* ============================================
-   Scroll Reveal
-   ============================================ */
 function initScrollReveal() {
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
@@ -182,16 +167,13 @@ function initScrollReveal() {
   });
 }
 
-/* ============================================
-   Typed.js & Hero Text Shadow
-   ============================================ */
 function initTyped() {
   const el = document.getElementById('element');
   if (!el) return;
   el.style.textShadow = '0 0 20px rgba(0, 229, 255, 0.3)';
 
   new Typed('#element', {
-    strings: ['Websites & Apps', 'PHP & MySQL Backends', 'Clean UIs', 'Creative Solutions'],
+    strings: ['Websites & Apps', 'PHP & MySQL Backends', 'Clean UI', 'Creative Solutions'],
     typeSpeed: 50,
     backSpeed: 30,
     backDelay: 1500,
@@ -199,9 +181,6 @@ function initTyped() {
   });
 }
 
-/* ============================================
-   Animated Counters
-   ============================================ */
 function initCounters() {
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
@@ -233,9 +212,6 @@ function animateCounter(el, target) {
   requestAnimationFrame(update);
 }
 
-/* ============================================
-   Modal (contact form)
-   ============================================ */
 function initModal() {
   const modal = document.getElementById('contactModal');
   const openBtn = document.getElementById('openContactModal');
@@ -304,9 +280,6 @@ function initModal() {
   }
 }
 
-/* ============================================
-   Hamburger
-   ============================================ */
 function initHamburger() {
   const btn = document.querySelector('.hamburger');
   const navUl = document.querySelector('.nav-links');
@@ -319,17 +292,27 @@ function initHamburger() {
   });
 }
 
-/* ============================================
-   Year
-   ============================================ */
 function setYear() {
   const el = document.getElementById('year');
   if (el) el.textContent = new Date().getFullYear();
 }
 
-/* ============================================
-   Scroll to Top
-   ============================================ */
+function initThemeToggle() {
+  const btn = document.querySelector('.theme-toggle');
+  if (!btn) return;
+
+  const stored = localStorage.getItem('theme');
+  const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+  const isLight = stored ? stored === 'light' : prefersLight;
+
+  if (isLight) document.documentElement.classList.add('light-theme');
+
+  btn.addEventListener('click', () => {
+    const now = document.documentElement.classList.toggle('light-theme');
+    localStorage.setItem('theme', now ? 'light' : 'dark');
+  });
+}
+
 function initScrollToTop() {
   const btn = document.getElementById('scrollToTop');
   if (!btn) return;
@@ -347,9 +330,6 @@ function initScrollToTop() {
   });
 }
 
-/* ============================================
-   Init
-   ============================================ */
 document.addEventListener('DOMContentLoaded', () => {
   new ParticleNetwork();
   initScrollProgress();
@@ -362,4 +342,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initHamburger();
   setYear();
   initScrollToTop();
+  initThemeToggle();
 });

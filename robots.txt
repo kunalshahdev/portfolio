@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kunalshahdev.github.io/portfolio/sitemap.xml

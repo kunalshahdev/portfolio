@@ -1,0 +1,13 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "minify index.html > dist/index.html && minify style.css > dist/style.css && minify index.js > dist/index.js",
+    "deploy": "npm run build && npx gh-pages -d dist"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.0.0",
+    "minify": "^11.0.0"
+  }
+}
