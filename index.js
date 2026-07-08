@@ -266,16 +266,9 @@ function initModal() {
 
   if (form) {
     form.addEventListener('submit', e => {
-      e.preventDefault();
-      const name = document.getElementById('contactName').value.trim();
-      const email = document.getElementById('contactEmail').value.trim();
-      const subject = document.getElementById('contactSubject').value.trim();
-      const message = document.getElementById('contactMessage').value.trim();
-
-      const to = 'kunalshah1172@gmail.com';
-      const body = `Name: ${name}%0D%0AEmail: ${encodeURIComponent(email)}%0D%0A%0D%0A${encodeURIComponent(message)}`;
-      window.location.href = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${body}`;
-      close();
+      const submitBtn = form.querySelector('.btn.primary');
+      submitBtn.textContent = 'Sending...';
+      submitBtn.disabled = true;
     });
   }
 }
